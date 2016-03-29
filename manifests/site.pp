@@ -44,6 +44,7 @@ node default {
   #   class { 'my_class': }
   #include users
   include skeleton
+  include memcached
   notify { "Hello, my name is ${::hostname}": }
   notify { "Hello world": }
 exec { 'motd':
