@@ -32,7 +32,7 @@ class nginx {
   
   file { '/var/www/index.html':
     ensure  =>  directory,
-    require =>  File['/var/www'],
+    require =>  Directory['/var/www'],
   }
 
   service { 'nginx':
