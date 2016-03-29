@@ -19,7 +19,7 @@ class nginx {
     #mode    => '0644',
     source  => 'puppet:///modules/nginx/default.conf',
     require => Package['nginx']
-    require => File['/etc/nginx/conf.d'],
+    require => Directory['/etc/nginx/conf.d'],
   }
   
   file { '/etc/nginx/conf.d':
