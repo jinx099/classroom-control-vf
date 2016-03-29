@@ -19,7 +19,6 @@ class nginx {
     #mode    => '0644',
     source  => 'puppet:///modules/nginx/default.conf',
     require => Package['nginx']
-    require => Directory['/etc/nginx/conf.d'],
   }
   
   file { '/etc/nginx/conf.d':
@@ -32,7 +31,6 @@ class nginx {
   
   file { '/var/www/index.html':
     ensure  =>  directory,
-    require =>  Directory['/var/www'],
   }
 
   service { 'nginx':
