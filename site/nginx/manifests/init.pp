@@ -21,15 +21,19 @@ class nginx {
     require => Package['nginx']
   }
   
+    file { '/var/www/index.html':
+    ensure  => file,
+    #owner   => 'root',
+    #group   => 'root',
+    #mode    => '0644',
+    source  => 'puppet:///modules/nginx/index.html',
+  }
+  
   file { '/etc/nginx/conf.d':
     ensure  =>  directory,
   }
   
   file { '/var/www':
-    ensure  =>  directory,
-  }
-  
-  file { '/var/www/index.html':
     ensure  =>  directory,
   }
 
