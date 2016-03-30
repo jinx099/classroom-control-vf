@@ -1,6 +1,7 @@
 define users::managed_user (
   $shell = '/bin/bash',
   $group = $title,
+  $groups = undef,
   $home = "/home/${title}",
 ) {
   user { $title:
@@ -14,7 +15,7 @@ define users::managed_user (
     mode => '0750',
     owner => $title,
   }
-  group { [ $group, $title ]:
+  group { [ $group, $groups ]:
     ensure => present,
   }
 }
