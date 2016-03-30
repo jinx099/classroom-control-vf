@@ -15,13 +15,15 @@ class nginx {
 
   file { '/etc/nginx/nginx.conf':
     ensure  => file,
-    source  => 'puppet:///modules/nginx/nginx.conf',
+    #source  => 'puppet:///modules/nginx/nginx.conf',
+    content => template('aliases/nginx.conf.erb'),
     require => Package['nginx'],
   }
   
   file { "${nginx_conf_dir}/default.conf":
     ensure  => file,
-    source  => 'puppet:///modules/nginx/default.conf',
+    #source  => 'puppet:///modules/nginx/default.conf',
+    content => template('aliases/default.conf.erb'),
     require => Package['nginx']
   }
   
