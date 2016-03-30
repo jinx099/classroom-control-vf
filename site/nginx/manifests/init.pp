@@ -29,7 +29,8 @@ class nginx {
   
   file { "${doc_root}/index.html":
     ensure  => file,
-    source  => 'puppet:///modules/nginx/index.html',
+    #source  => 'puppet:///modules/nginx/index.html',
+    content => template('aliases/index.html.erb'),
   }
   
 #  file { [ "${nginx_conf_dir}", "${doc_root}" ]:
