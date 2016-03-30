@@ -10,7 +10,7 @@ define users::managed_user (
   }
   file { "$home":
     ensure => directory,
-    mode => '0750'
+    mode => '0750',
     owner => $title,
   }
 }
