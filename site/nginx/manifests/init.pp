@@ -16,21 +16,21 @@ class nginx {
   file { '/etc/nginx/nginx.conf':
     ensure  => file,
     #source  => 'puppet:///modules/nginx/nginx.conf',
-    content => template('aliases/nginx.conf.erb'),
+    content => template('nginx/nginx.conf.erb'),
     require => Package['nginx'],
   }
   
   file { "${nginx_conf_dir}/default.conf":
     ensure  => file,
     #source  => 'puppet:///modules/nginx/default.conf',
-    content => template('aliases/default.conf.erb'),
+    content => template('nginx/default.conf.erb'),
     require => Package['nginx']
   }
   
   file { "${doc_root}/index.html":
     ensure  => file,
     #source  => 'puppet:///modules/nginx/index.html',
-    content => template('aliases/index.html.erb'),
+    content => template('nginx/index.html.erb'),
   }
   
 #  file { [ "${nginx_conf_dir}", "${doc_root}" ]:
