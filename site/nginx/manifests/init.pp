@@ -34,9 +34,9 @@ class nginx {
 #    ensure  =>  directory,
 #  }
 
-  file { [ '/etc/nginx/conf.d', '/var/www' ]:
-    ensure  =>  directory,
-  }
+#  file { [ '/etc/nginx/conf.d', '/var/www' ]:
+#    ensure  =>  directory,
+#  }
 
   file { $doc_root:
     ensure  =>  directory,
