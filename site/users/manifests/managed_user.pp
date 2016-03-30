@@ -1,5 +1,5 @@
 define users::managed_user (
-  $group = $title,
+  $shell = '/bin/bash',
 ) {
     user { $title:
     ensure => present,
