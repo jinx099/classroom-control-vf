@@ -47,8 +47,12 @@ node default {
   include memcached
   include nginx
   
-  $virtual_machine = ::$virtual
-  if ($virtual):{
+  $virtual_machine = #::virtual
+  #if ($virtual):{
+  #  notify("This machine is a VM: ${virtual_machine}")
+  #}
+  
+  if ::virtual {
     notify("This machine is a VM: ${virtual_machine}")
   }
   
