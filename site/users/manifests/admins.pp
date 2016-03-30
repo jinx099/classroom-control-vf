@@ -4,10 +4,10 @@ class users::admins {
     groups => 'staff',
   }
   users::managed_user { 'chen':
-    groups => 'staff',
+    groups => [ 'staff', 'wheel' ],
     shell => '/bin/sh',
   }
-  group { 'staff':
+  group { ['staff', 'wheel' ]:
     ensure => present,
   }
 }
