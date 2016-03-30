@@ -41,10 +41,6 @@ class nginx {
   file { $doc_root:
     ensure  =>  directory,
   }
-
-  file { $nginx_conf_dir:
-    ensure  =>  directory,
-  }
   
   file { '/etc/nginx/conf.d':
     ensure  =>  directory,
