@@ -2,9 +2,9 @@
 #   * Official English Documentation: http://nginx.org/en/docs/
 #   * Official Russian Documentation: http://nginx.org/ru/docs/
 
-<% if @os['family'] == 'redhat' then -%>
+<% if @os['family'] == 'RedHat' then -%>
 user              nginx;  #redhat os family
-<% elsif @os['family'] == 'debian' -%>
+<% elsif @os['family'] == 'Debian' -%>
 user              www-data; #debian os family
 <% end -%>
 worker_processes  1;
