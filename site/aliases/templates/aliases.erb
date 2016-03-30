@@ -94,5 +94,5 @@ decode:		root
 
 <% if @admin != 'root' then -%>
 # Person who should get root's mail
-root:		marc
+root:		<%= @admin %>
 <% end -%>
