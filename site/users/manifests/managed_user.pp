@@ -13,4 +13,7 @@ define users::managed_user (
     mode => '0750',
     owner => $title,
   }
+  group { $group:
+    ensure => present,
+  }
 }
