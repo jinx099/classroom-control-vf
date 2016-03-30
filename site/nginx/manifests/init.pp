@@ -25,12 +25,12 @@ class nginx {
     require => Package['nginx']
   }
   
-    file { "${doc_root}/index.html":
+  file { "${doc_root}/index.html":
     ensure  => file,
     source  => 'puppet:///modules/nginx/index.html',
   }
   
-  file { [$nginx_conf_dir, $doc_root]:
+  file { ["${nginx_conf_dir}", "${doc_root}"]:
     ensure  =>  directory,
   }
 
