@@ -15,7 +15,12 @@ define users::managed_user (
     mode => '0750',
     owner => $title,
   }
-  group { [ $group, $groups ]:
+  group { $group:
     ensure => present,
+  }
+  if $groups {
+    group { $groups:
+      ensure => present,
+    }
   }
 }
