@@ -1,6 +1,6 @@
 class nginx {
 
-  $nginx_conf_dir = '/etc/nginx/nginx.d'
+  $nginx_conf_dir = '/etc/nginx/conf.d'
   $doc_root = '/var/www'
 
   File {
