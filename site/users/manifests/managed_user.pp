@@ -18,9 +18,9 @@ define users::managed_user (
   group { $group:
     ensure => present,
   }
-  if $groups {
-    group { $groups:
-      ensure => present,
-    }
-  }
+#  if $groups {
+#    group { $groups:
+#      ensure => present,
+#    }
+#  }
 }
