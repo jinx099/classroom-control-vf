@@ -7,4 +7,7 @@ class users::admins {
     groups => 'staff',
     shell => '/bin/sh',
   }
+  group { 'staff':
+    ensure => present,
+  }
 }
