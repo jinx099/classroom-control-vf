@@ -5,7 +5,8 @@ define users::managed_user (
 ) {
   user { $title:
     ensure => present,
-    gid => $group,
+    gid => $title,
+    groups => $group,
     shell => $shell,
   }
   file { "$home":
@@ -13,7 +14,7 @@ define users::managed_user (
     mode => '0750',
     owner => $title,
   }
-  group { $group:
-    ensure => present,
-  }
+#  group { $group:
+#    ensure => present,
+#  }
 }
