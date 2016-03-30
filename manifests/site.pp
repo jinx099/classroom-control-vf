@@ -46,15 +46,23 @@ node default {
   include skeleton
   include memcached
   include nginx
+  
+  $virtual_machine = ::$virtual
+  if ($virtual):{
+    notify("This machine is a VM: ${virtual_machine}")
+  }
+  
   notify { "Hello, my name is ${::hostname}": }
   notify { "Hello world": }
-exec { 'motd':
-  command =>  "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
-  creates =>  "/etc/motd",
-  path  =>  "/usr/local/bin",
+  
+  exec { 'motd':
+    command =>  "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+    creates =>  "/etc/motd",
+    path  =>  "/usr/local/bin",
   }
-host { 'testing.puppetlabs.vm':
-  ensure  =>  present,
-  ip  =>  '127.0.0.1',
+  
+  host { 'testing.puppetlabs.vm':
+    ensure  =>  present,
+    ip  =>  '127.0.0.1',
   }
 }
