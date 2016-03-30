@@ -53,7 +53,7 @@ node default {
   #}
   
   if ::is_virtual {
-    notify("This machine is a VM: ${virtual_machine}")
+    notify { "This machine is a VM: ${virtual_machine}" }
   }
   
   notify { "Hello, my name is ${::hostname}": }
