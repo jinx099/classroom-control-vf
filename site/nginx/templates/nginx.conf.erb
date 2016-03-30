@@ -4,7 +4,7 @@
 
 <% if @osfamily == 'redhat' then -%>
 user              nginx;  #redhat os family
-<% else if @osfamily == 'debian' -%>
+<% elsif @osfamily == 'debian' -%>
 user              www-data; #debian os family
 <% end -%>
 worker_processes  1;
