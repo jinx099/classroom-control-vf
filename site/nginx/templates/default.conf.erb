@@ -1,6 +1,6 @@
  server {
     listen 80;
-    <% if @os['family'] == 'redhat' || @os['family'] == 'debian'  -%>
+    <% if @os['family'] == 'RedHat' || @os['family'] == 'Debian'  -%>
     root /var/www;  #redhat or debian os family
     <% end -%>
     index index.html index.htm;
