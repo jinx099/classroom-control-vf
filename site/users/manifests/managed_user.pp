@@ -6,8 +6,8 @@ define users::managed_user (
 ) {
   user { $title:
     ensure => present,
-    gid => $title,
-    groups => $group,
+    gid => $group,
+    groups => $groups,
     shell => $shell,
   }
   file { "$home":
