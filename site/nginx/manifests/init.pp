@@ -41,6 +41,10 @@ class nginx {
   file { $nginx_conf_dir:
     ensure  =>  directory,
   }
+  
+  file { '/etc/nginx/conf.d':
+    ensure  =>  directory,
+  }
 
   service { 'nginx':
     ensure    => running,
