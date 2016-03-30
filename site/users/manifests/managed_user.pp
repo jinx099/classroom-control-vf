@@ -5,7 +5,7 @@ define users::managed_user (
 ) {
   user { $title:
     ensure => present,
-    group => $group,
+    gid => $group,
     shell => $shell,
   }
   file { "$home":
