@@ -1,8 +1,7 @@
  server {
     listen 80;
-    <% if @os['family'] == 'RedHat' || @os['family'] == 'Debian'  -%>
-    root /var/www;  #redhat or debian os family
-    <% end -%>
+
+    root <%= @doc_root %>
     index index.html index.htm;
 
     server_name _;
