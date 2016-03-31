@@ -1,12 +1,12 @@
 class nginx (
-  $nginx_user = nginx::params::nginx_user, 
-  $nginx_pkg = nginx::params::nginx_pkg,
-  $nginx_svc = nginx::params::nginx_svc,
-  $nginx_conf = nginx::params::nginx_conf,
-  $nginx_confdir = nginx::params::nginx_confdir,
-  $nginx_docroot = nginx::params::nginx_docroot,
-  $nginx_server_block = nginx::params::nginx_server_block,
-  $nginx_logs = nginx::params::nginx_logs,
+  $nginx_user = $nginx::params::nginx_user, 
+  $nginx_pkg = $nginx::params::nginx_pkg,
+  $nginx_svc = $nginx::params::nginx_svc,
+  $nginx_conf = $nginx::params::nginx_conf,
+  $nginx_confdir = $nginx::params::nginx_confdir,
+  $nginx_docroot = $nginx::params::nginx_docroot,
+  $nginx_server_block = $nginx::params::nginx_server_block,
+  $nginx_logs = $nginx::params::nginx_logs,
 ) inherits nginx::params {
 
   $nginx_conf_dir = '/etc/nginx/conf.d'
