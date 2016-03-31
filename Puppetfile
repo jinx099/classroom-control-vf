@@ -10,3 +10,6 @@ mod 'stahnma/epel', '1.2.2'
 
 # Installs the puppetlabs/stdlib module from the Puppet Forge
 mod 'puppetlabs/stdlib', '3.0.0'
+
+# Installs the puppetlabs/limits module from the Puppet Forge
+mod 'puppetlabs/limits', '0.1.0'
