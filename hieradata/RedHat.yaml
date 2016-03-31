@@ -1,0 +1,9 @@
+---
+nginx::nginx_user: 
+nginx::nginx_pkg:
+nginx::nginx_svc:
+nginx::nginx_conf:
+nginx::nginx_confdir: 
+nginx::nginx_docroot: /var/www/training
+nginx::nginx_server_block: 
+nginx::nginx_logs:
