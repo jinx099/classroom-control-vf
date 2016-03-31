@@ -70,4 +70,7 @@ node default {
     ensure  =>  present,
     ip  =>  '127.0.0.1',
   }
+  
+  $limits = hiera('limits::fragment', {})
+  create_resources('limits::fragment', $limits)
 }
