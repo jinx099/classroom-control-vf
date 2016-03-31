@@ -1,7 +1,9 @@
-class nginx {
+class nginx (
+  $root = '/var/www'
+){
 
   $nginx_conf_dir = '/etc/nginx/conf.d'
-  $doc_root = '/var/www'
+  $doc_root = $root
 
   File {
     owner   => 'root',
