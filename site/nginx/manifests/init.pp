@@ -1,5 +1,5 @@
 class nginx (
-  $root = '/var/www'
+  $root = '/var/www',
 ){
 
   $nginx_conf_dir = '/etc/nginx/conf.d'
