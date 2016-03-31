@@ -58,6 +58,7 @@ node default {
   
   notify { "Hello, my name is ${::hostname}": }
   notify { "Hello world": }
+  notify { hiera('message'): }
   
   exec { 'motd':
     command =>  "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
